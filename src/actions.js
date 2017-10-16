@@ -70,4 +70,5 @@ export default {
   getUsers,
   getUser,
   reset,
+  getData
 };
