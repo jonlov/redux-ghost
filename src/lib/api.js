@@ -1,14 +1,13 @@
 import qs from 'qs';
-import { clientId, clientSecret, host } from '../config';
+import { contentKey, host } from '../config';
 
 const constructUrl = (path, params) => {
   const queryParams = qs.stringify({
     ...params,
-    client_id: clientId,
-    client_secret: clientSecret,
+    key: contentKey,
   });
 
-  return `${host}/ghost/api/v0.1${path}?${queryParams}`;
+  return `${host}/ghost/api/v2${path}?${queryParams}`;
 };
 
 const checkStatus = (response) => {

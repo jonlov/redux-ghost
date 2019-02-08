@@ -17,11 +17,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var constructUrl = function constructUrl(path, params) {
   var queryParams = _qs2.default.stringify(_extends({}, params, {
-    client_id: _config.clientId,
-    client_secret: _config.clientSecret
+    key: _config.contentKey
   }));
 
-  return _config.host + '/ghost/api/v0.1' + path + '?' + queryParams;
+  return _config.host + '/ghost/api/v2' + path + '?' + queryParams;
 };
 
 var checkStatus = function checkStatus(response) {
