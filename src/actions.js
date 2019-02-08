@@ -38,6 +38,15 @@ const getPost = (id, options) => {
   return getData(GET_POST, `/posts/${id}/`, options);
 };
 
+// Pages
+const getPage = (id, options) => {
+  if (!isId(id)) {
+    return fail(GET_POST, 'Invalid Id');
+  }
+
+  return getData(GET_POST, `/pages/${id}/`, options);
+}
+
 // Tags
 const getTags = (options) => getData(GET_TAGS, '/tags/', options);
 const getTag = (id, options) => {
@@ -65,6 +74,7 @@ const reset = () => ({
 export default {
   getPosts,
   getPost,
+  getPage,
   getTags,
   getTag,
   getUsers,

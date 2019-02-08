@@ -59,6 +59,15 @@ var getPost = function getPost(id, options) {
   return getData(_actionTypes.GET_POST, '/posts/' + id + '/', options);
 };
 
+// Pages
+var getPage = function getPage(id, options) {
+  if (!(0, _utils.isId)(id)) {
+    return fail(_actionTypes.GET_POST, 'Invalid Id');
+  }
+
+  return getData(_actionTypes.GET_POST, '/pages/' + id + '/', options);
+};
+
 // Tags
 var getTags = function getTags(options) {
   return getData(_actionTypes.GET_TAGS, '/tags/', options);
@@ -92,6 +101,7 @@ var reset = function reset() {
 exports.default = {
   getPosts: getPosts,
   getPost: getPost,
+  getPage: getPage,
   getTags: getTags,
   getTag: getTag,
   getUsers: getUsers,
