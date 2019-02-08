@@ -7,7 +7,7 @@ const constructUrl = (path, params) => {
     key: contentKey,
   });
 
-  return `${host}/ghost/api/v2${path}?${queryParams}`;
+  return `${host}/ghost/api/v2/content${path}?${queryParams}`;
 };
 
 const checkStatus = (response) => {

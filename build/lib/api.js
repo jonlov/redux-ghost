@@ -20,7 +20,7 @@ var constructUrl = function constructUrl(path, params) {
     key: _config.contentKey
   }));
 
-  return _config.host + '/ghost/api/v2' + path + '?' + queryParams;
+  return _config.host + '/ghost/api/v2/content' + path + '?' + queryParams;
 };
 
 var checkStatus = function checkStatus(response) {
