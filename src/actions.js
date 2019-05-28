@@ -5,6 +5,9 @@ import {
   GET_POSTS,
   GET_POST,
   GET_POST_SLUG,
+  GET_PAGES,
+  GET_PAGE,
+  GET_PAGE_SLUG,
   GET_TAGS,
   GET_TAG,
   GET_TAG_SLUG,
@@ -57,12 +60,20 @@ const getPostBySlug = (slug, options) => {
 };
 
 // Pages
+const getPages = options => getData(GET_PAGE, `/pages/`, options);
 const getPage = (id, options) => {
   if (!isId(id)) {
-    return fail(GET_POST, "Invalid Id");
+    return fail(GET_PAGE, "Invalid Id");
   }
 
-  return getData(GET_POST, `/pages/${id}/`, options);
+  return getData(GET_PAGE, `/pages/${id}/`, options);
+};
+const getPageBySlug = (slug, options) => {
+  if (!slug) {
+    return fail(GET_PAGE_SLUG, "Slug parameter is null");
+  }
+
+  return getData(GET_PAGE_SLUG, `/pages/slug/${slug}/`, options);
 };
 
 // Tags
