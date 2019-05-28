@@ -18,8 +18,7 @@ import ReduxGhost, { reducer as ghostReducer } from 'redux-ghost';
 
 ReduxGhost.config({
   host: '', // e.g. http://localhost:2368
-  clientId: '', // e.g. ghost-frontend
-  clientSecret: '', // e.g. 4837a41df11b
+  contentKey: '', // e.g. b67bf578201553cf80ff55c170
 });
 
 const rootReducer = combineReducers({
@@ -78,12 +77,16 @@ Actions available:
 | getPosts      | [options (object)](https://api.ghost.org/docs/posts)                          |
 | getPost       | id (string / integer), [options (object)](https://api.ghost.org/docs/postsid) |
 | getPostBySlug | slug (string), [options (object)](https://api.ghost.org/docs/postsslugslug)   |
+| getPages      | [options (object)](https://api.ghost.org/docs/pages)                          |
+| getPage       | id (string / integer), [options (object)](https://api.ghost.org/docs/pagesid) |
+| getPageBySlug | slug (string), [options (object)](https://api.ghost.org/docs/pagesslugslug)   |
 | getTags       | [options (object)](https://api.ghost.org/docs/tags)                           |
 | getTag        | id (string / integer), [options (object)](https://api.ghost.org/docs/tagsid)  |
 | getTagBySlug  | slug (string), [options (object)](https://api.ghost.org/docs/tagsslugslug)    |
 | getUsers      | [options (object)](https://api.ghost.org/docs/users)                          |
 | getUser       | id (string / integer), [options (object)](https://api.ghost.org/docs/usersid) |
 | getUserBySlug | slug (string), [options (object)](https://api.ghost.org/docs/usersslugslug)   |
+| getSettings   | [options (object)](https://api.ghost.org/docs/settings)                       |
 | reset         |                                                                               |
 
 ## Development
