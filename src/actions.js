@@ -130,7 +130,7 @@ export default {
   getUsers,
   getUser,
   getUserBySlug,
-  getSettings
+  getSettings,
   reset,
   getData
 };
