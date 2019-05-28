@@ -1,6 +1,6 @@
-import "isomorphic-fetch";
-import { request } from "./lib/api";
-import { isId } from "./lib/utils";
+import 'isomorphic-fetch';
+import { request } from './lib/api';
+import { isId } from './lib/utils';
 import {
   GET_POSTS,
   GET_POST,
@@ -14,25 +14,25 @@ import {
   GET_USERS,
   GET_USER,
   GET_USER_SLUG,
-  SETTINGS,
-  RESET
-} from "./action-types";
+  GET_SETTINGS,
+  RESET,
+} from './action-types';
 
 const pending = type => ({
   type,
-  status: "loading"
+  status: 'loading',
 });
 
 const success = (type, data) => ({
   type,
-  status: "success",
-  data
+  status: 'success',
+  data,
 });
 
 const fail = (type, error) => ({
   type,
-  status: "error",
-  error
+  status: 'error',
+  error,
 });
 
 const getData = (type, uri, options) => dispatch => {
@@ -44,44 +44,44 @@ const getData = (type, uri, options) => dispatch => {
 };
 
 // Posts
-const getPosts = options => getData(GET_POSTS, "/posts/", options);
+const getPosts = options => getData(GET_POSTS, '/posts/', options);
 const getPost = (id, options) => {
   if (!isId(id)) {
-    return fail(GET_POST, "Invalid Id");
+    return fail(GET_POST, 'Invalid Id');
   }
 
   return getData(GET_POST, `/posts/${id}/`, options);
 };
 const getPostBySlug = (slug, options) => {
   if (!slug) {
-    return fail(GET_POST_SLUG, "Slug parameter is null");
+    return fail(GET_POST_SLUG, 'Slug parameter is null');
   }
 
   return getData(GET_POST_SLUG, `/posts/slug/${slug}/`, options);
 };
 
 // Pages
-const getPages = options => getData(GET_PAGE, `/pages/`, options);
+const getPages = options => getData(GET_PAGES, '/pages/', options);
 const getPage = (id, options) => {
   if (!isId(id)) {
-    return fail(GET_PAGE, "Invalid Id");
+    return fail(GET_PAGE, 'Invalid Id');
   }
 
   return getData(GET_PAGE, `/pages/${id}/`, options);
 };
 const getPageBySlug = (slug, options) => {
   if (!slug) {
-    return fail(GET_PAGE_SLUG, "Slug parameter is null");
+    return fail(GET_PAGE_SLUG, 'Slug parameter is null');
   }
 
   return getData(GET_PAGE_SLUG, `/pages/slug/${slug}/`, options);
 };
 
 // Tags
-const getTags = options => getData(GET_TAGS, "/tags/", options);
+const getTags = options => getData(GET_TAGS, '/tags/', options);
 const getTag = (id, options) => {
   if (!isId(id)) {
-    return fail(GET_TAG, "Invalid Id");
+    return fail(GET_TAG, 'Invalid Id');
   }
 
   return getData(GET_TAG, `/tags/${id}/`, options);
@@ -89,17 +89,17 @@ const getTag = (id, options) => {
 
 const getTagBySlug = (slug, options) => {
   if (!slug) {
-    return fail(GET_TAG_SLUG, "Slug parameter is null");
+    return fail(GET_TAG_SLUG, 'Slug parameter is null');
   }
 
   return getData(GET_TAG_SLUG, `/tags/slug/${slug}/`, options);
 };
 
 // Users
-const getUsers = options => getData(GET_USERS, "/users/", options);
+const getUsers = options => getData(GET_USERS, '/users/', options);
 const getUser = (id, options) => {
   if (!isId(id)) {
-    return fail(GET_USER, "Invalid Id");
+    return fail(GET_USER, 'Invalid Id');
   }
 
   return getData(GET_USER, `/users/${id}/`, options);
@@ -107,16 +107,16 @@ const getUser = (id, options) => {
 
 const getUserBySlug = (slug, options) => {
   if (!slug) {
-    return fail(GET_USER_SLUG, "Slug parameter is null");
+    return fail(GET_USER_SLUG, 'Slug parameter is null');
   }
 
   return getData(GET_USER_SLUG, `/users/slug/${slug}/`, options);
 };
 
-const getSettings = options => getData(GET_SETTINGS, "/settings/", options);
+const getSettings = options => getData(GET_SETTINGS, '/settings/', options);
 
 const reset = () => ({
-  type: RESET
+  type: RESET,
 });
 
 export default {
@@ -134,5 +134,5 @@ export default {
   getUserBySlug,
   getSettings,
   reset,
-  getData
+  getData,
 };
