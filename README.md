@@ -86,7 +86,7 @@ Actions available:
 | getUsers      | [options (object)](https://api.ghost.org/docs/users)                          |
 | getUser       | id (string / integer), [options (object)](https://api.ghost.org/docs/usersid) |
 | getUserBySlug | slug (string), [options (object)](https://api.ghost.org/docs/usersslugslug)   |
-| getSettings   | [options (object)](https://api.ghost.org/docs/settings)                       |
+| getSettings   | [options (object)](https://docs.ghost.org/api/content/#settings)              |
 | reset         |                                                                               |
 
 ## Development
