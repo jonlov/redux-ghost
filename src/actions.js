@@ -14,6 +14,7 @@ import {
   GET_USERS,
   GET_USER,
   GET_USER_SLUG,
+  SETTINGS,
   RESET
 } from "./action-types";
 
@@ -112,6 +113,8 @@ const getUserBySlug = (slug, options) => {
   return getData(GET_USER_SLUG, `/users/slug/${slug}/`, options);
 };
 
+const getSettings = options => getData(GET_SETTINGS, "/settings/", options);
+
 const reset = () => ({
   type: RESET
 });
@@ -127,6 +130,7 @@ export default {
   getUsers,
   getUser,
   getUserBySlug,
+  getSettings
   reset,
   getData
 };

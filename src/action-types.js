@@ -10,4 +10,5 @@ export const GET_TAG_SLUG = "@@redux-ghost/GET_TAG_SLUG";
 export const GET_USERS = "@@redux-ghost/GET_USERS";
 export const GET_USER = "@@redux-ghost/GET_USER";
 export const GET_USER_SLUG = "@@redux-ghost/GET_USER_SLUG";
+export const GET_SETTINGS = "@@redux-ghost/GET_SETTINGS";
 export const RESET = "@@redux-ghost/RESET";
